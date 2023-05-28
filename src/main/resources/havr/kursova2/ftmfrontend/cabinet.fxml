@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="havr.kursova2.ftmfrontend.Controllers.CabinetController">
+   <children>
+      <Pagination layoutX="91.0" layoutY="215.0" prefHeight="171.0" prefWidth="418.0" />
+      <Label layoutX="110.0" layoutY="14.0" text="Інформація про акаунт">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="242.0" layoutY="173.0" text="Квитки">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="105.0" layoutY="99.0" prefHeight="18.0" prefWidth="77.0" text="Label" />
+      <Label layoutX="105.0" layoutY="123.0" prefHeight="18.0" prefWidth="77.0" text="Label" />
+      <Label layoutX="183.0" layoutY="99.0" prefHeight="18.0" prefWidth="77.0" text="Label" />
+      <Label layoutX="183.0" layoutY="123.0" prefHeight="18.0" prefWidth="77.0" text="Label" />
+      <Label layoutX="261.0" layoutY="99.0" prefHeight="18.0" prefWidth="77.0" text="Label" />
+      <Label layoutX="261.0" layoutY="123.0" prefHeight="18.0" prefWidth="77.0" text="Label" />
+      <Label layoutX="339.0" layoutY="99.0" prefHeight="18.0" prefWidth="77.0" text="Label" />
+      <Label layoutX="339.0" layoutY="123.0" prefHeight="18.0" prefWidth="77.0" text="Label" />
+      <Label layoutX="417.0" layoutY="99.0" prefHeight="18.0" prefWidth="77.0" text="Label" />
+      <Label layoutX="417.0" layoutY="123.0" prefHeight="18.0" prefWidth="77.0" text="Label" />
+      <Button layoutX="507.0" layoutY="359.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="26.0" prefWidth="78.0" text="Button" />
+   </children>
+</AnchorPane>

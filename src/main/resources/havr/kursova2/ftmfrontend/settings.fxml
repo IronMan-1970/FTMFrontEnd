@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="havr.kursova2.ftmfrontend.Controllers.SettingPageController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: 212A3E;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Аккаунт">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                         <AnchorPane layoutX="-1.0" layoutY="-2.0" prefHeight="371.0" prefWidth="600.0" style="-fx-background-color: white; -fx-background-radius: 25;">
+                             <children>
+                                 <TextField fx:id="usrName" layoutX="89.0" layoutY="94.0" />
+                                 <Label layoutX="180.0" layoutY="14.0" text="Edit Information">
+                                     <font>
+                                         <Font name="Calibri" size="36.0" />
+                                     </font>
+                                 </Label>
+                                 <PasswordField fx:id="usrPsswd" layoutX="89.0" layoutY="120.0" />
+                                 <DatePicker fx:id="usrBrthD" layoutX="361.0" layoutY="97.0" prefHeight="26.0" prefWidth="150.0" />
+                                 <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="67.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+                                     <image>
+                                         <Image url="@registration%20icons/User.png" />
+                                     </image>
+                                 </ImageView>
+                                 <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="67.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+                                     <image>
+                                         <Image url="@registration%20icons/password-icon-2.png" />
+                                     </image>
+                                 </ImageView>
+                                 <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="339.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+                                     <image>
+                                         <Image url="@registration%20icons/calendar.png" />
+                                     </image>
+                                 </ImageView>
+                                 <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="339.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+                                     <image>
+                                         <Image url="@registration%20icons/Country.png" />
+                                     </image>
+                                 </ImageView>
+                                 <ComboBox fx:id="UsrCnt" layoutX="361.0" layoutY="123.0" prefHeight="26.0" prefWidth="150.0" />
+                                 <Button layoutX="506.0" layoutY="330.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="26.0" prefWidth="80.0" text="Go back " />
+                              <TextField layoutX="239.0" layoutY="198.0" prefHeight="26.0" prefWidth="122.0" />
+                              <Label layoutX="246.0" layoutY="172.0" prefHeight="26.0" prefWidth="108.0" text="Admin access">
+                                 <font>
+                                    <Font name="Calibri" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="361.0" layoutY="198.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" text="use key" />
+                             </children>
+                         </AnchorPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Керування БД">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Accordion fx:id="adminSpace" layoutY="31.0" prefHeight="343.0" prefWidth="600.0">
+                          <panes>
+                            <TitledPane fx:id="userPane" animated="false" onMouseClicked="#userTableView" prefHeight="263.0" prefWidth="600.0" text="Користувачі">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="userView" prefHeight="299.0" prefWidth="600.0">
+                                            <columns>
+                                              <TableColumn fx:id="nameCol" prefWidth="150.0" text="Ім'я" />
+                                              <TableColumn fx:id="bdCol" prefWidth="150.0" text="Дата народення" />
+                                                <TableColumn fx:id="ageCol" prefWidth="150.0" text="Вік" />
+                                                <TableColumn fx:id="countryCol" prefWidth="150.0" text="Країна" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane fx:id="flightPane" animated="false" onMouseClicked="#flightTableView" text="Рейси">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="flightView" prefHeight="299.0" prefWidth="600.0">
+                                             <columns>
+                                                <TableColumn fx:id="numCol" prefWidth="75.0" text="Номер" />
+                                                <TableColumn fx:id="passageCol" prefWidth="75.0" text="Маршрут" />
+                                                <TableColumn fx:id="startCol" prefWidth="75.0" text="Старт" />
+                                                <TableColumn fx:id="finishCol" prefWidth="75.0" text="Фініш" />
+                                                <TableColumn fx:id="dataAndTimeCol" prefWidth="75.0" text="Дата і час вильту" />
+                                                <TableColumn fx:id="timeCol" prefWidth="75.0" text="час польоту" />
+                                                <TableColumn fx:id="planeTypeCol" prefWidth="75.0" text="тип літака" />
+                                                <TableColumn fx:id="seatClassCol" prefWidth="75.0" text="клас" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane fx:id="planePane" animated="false" onMouseClicked="#planeTableView" text="Літаки">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="planeView" prefHeight="299.0" prefWidth="600.0">
+                                             <columns>
+                                                <TableColumn fx:id="planeType" prefWidth="200.0" text="Тип літака" />
+                                                <TableColumn fx:id="seatCount" prefWidth="200.0" text="Клькість місць" />
+                                                <TableColumn fx:id="techSpec" prefWidth="200.0" text="Тех характеристики" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                          </panes>
+                        </Accordion>
+                        <Button fx:id="addNewItem" mnemonicParsing="false" prefHeight="30.0" prefWidth="91.0" text="Додати" />
+                        <Button fx:id="applyChanges" layoutX="92.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="91.0" text="Застосувати" />
+                        <Button fx:id="deleteItem" layoutX="185.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="91.0" text="Вилучити" />
+                        <Button layoutX="508.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="91.0" text="Знайти" />
+                        <TextField layoutX="279.0" prefHeight="30.0" prefWidth="229.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
